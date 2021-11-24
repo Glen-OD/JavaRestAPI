@@ -9,13 +9,16 @@ import java.util.concurrent.atomic.AtomicLong;
 @RestController
 public class GreetingController {
 
-    private static final String template = "hello, %s!";
+    private static final String template = "The Average word length of the sentence is, %s!";
     private final AtomicLong counter = new AtomicLong();
 
     // /greeting?name=Glen will print "hello Glen"
-    @GetMapping("/greeting")
-    public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name){
-        return new Greeting(counter.incrementAndGet(),String.format(template,name));
+    @GetMapping("/")
+    public Greeting greeting(@RequestParam(value = "sentence", defaultValue = "0") String sentence){
+        Greeting ouput = new Greeting(counter.incrementAndGet(), String.format(template,sentence));
+        counter.decrementAndGet();
+        double avg = ouput.getAverageLength(sentence);
+        return new Greeting(counter.incrementAndGet(),String.format(template,avg));
     }
 
 
