@@ -5,7 +5,7 @@ stages:
 
 build:
   stage: build
-  script: ./mvnw package
+  script: ./rest-service/mvnw package
   artifacts:
     paths:
       - target/rest-service-0.0.1-SNAPSHOT.jar
