@@ -1,8 +1,4 @@
-FROM ubuntu:18.04
-RUN apt-get update -y
-WORKDIR /RestServiceApplication
-ARG DEPENDENCY=./rest-servicetarget/rest-service-0.0.1-SNAPSHOT
-COPY ./rest-service/target service-0.0.1-SNAPSHOT.jar
-EXPOSE 8080
+FROM openjdk:8-jdk-alpine
+ARG JAR_FILE=./rest-service/target/*.jar
+COPY ${JAR_FILE} rest-service-0.0.1-SNAPSHOT.jar
 ENTRYPOINT ["java","-jar","/rest-service-0.0.1-SNAPSHOT.jar"]
-CMD ["RestServiceApplication.java"]

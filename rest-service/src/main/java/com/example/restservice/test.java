@@ -1,18 +1,18 @@
-package com.example.restservice;
+/*  package com.example.restservice;
 
-import org.junit.jupiter.api.Test;
+ import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+ import static org.junit.jupiter.api.Assertions.*;
 
-class test {
+ class test {
     
 
     @Test
-    void hello()
+     void hello()
     {
-        Greeting controller = new Greeting(1,"Test 1234");
-        Double response = controller.getAverageLength("Test 1234");
-        assertEquals(4.0,response);
-    }
+         Greeting controller = new Greeting(1,"Test 1234");
+         Double response = controller.getAverageLength("Test 1234");
+         assertEquals(4.0,response);
+     }
 
-}
+} */
