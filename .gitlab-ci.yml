@@ -15,10 +15,10 @@ stages:
 maven-build:
   image: maven:3-jdk-8
   stage: build
-  script: "./rest-service/mvn clean package -B"
+  script: "mvn clean package -B"
   artifacts:
     paths:
-      - target/*.jar
+      - ./target/*.jar
 
 
 
