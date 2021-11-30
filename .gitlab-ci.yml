@@ -1,5 +1,4 @@
-services:
-  - docker:19.03.7-dind
+image: java:8
 
 stages:
   - build jar
@@ -7,8 +6,6 @@ stages:
 build:
   image: maven:3.6.3-jdk-11-slim
   stage: build jar
-  before_script:
-    - source .${CI_COMMIT_REF_NAME}.env
   script:
     - mvn clean install && mvn package -B
   artifacts:
