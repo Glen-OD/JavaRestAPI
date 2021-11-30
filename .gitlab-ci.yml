@@ -12,7 +12,7 @@ stages:
 maven-build:
   image: maven:3-jdk-8
   stage: build
-  script: "mvn package -B"
+  script: "chmod +x ./rest-service/mvn package -B"
   artifacts:
     paths:
       - target/*.jar
