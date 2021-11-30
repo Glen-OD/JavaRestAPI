@@ -7,7 +7,7 @@ build:
   stage: build
   script:
     - echo "maven compile started" 
-    - chmod +x ./rest-service/mvnw package
+    - chmod +x ./rest-service/mvnw
   artifacts:
     paths:
       - rest-service/target/rest-service-0.0.1-SNAPSHOT.jar
