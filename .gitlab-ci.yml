@@ -1,14 +1,19 @@
-image: java:8
+services:
+  - docker:19.03.7-dind
 
 stages:
-  - build
+  - build jar
 
 build:
-  stage: build
-  script: chmod +x ./rest-service/mvnw
+  image: maven:3.6.3-jdk-11-slim
+  stage: build jar
+  before_script:
+    - source .${CI_COMMIT_REF_NAME}.env
+  script:
+    - mvn clean install && mvn package -B
   artifacts:
     paths:
-      - rest-service/target/rest-service-0.0.1-SNAPSHOT.jar
+      - target/*.jar
 
 
 
