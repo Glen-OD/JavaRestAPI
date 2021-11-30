@@ -1,14 +1,24 @@
-image: java:8
+image: gitlab/dind
+services:
+  - docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay
+  SPRING_PROFILES_ACTIVE: gitlab-ci
+  USER_GITLAB: 40233306
+  APP_NAME: GlenJavaRestApi
+  REPO: GlenJavaRestApi
 
 stages:
   - build
 
-build:
+maven-build:
+  image: maven:3-jdk-8
   stage: build
-  script: chmod +x ./rest-service/mvnw
+  script: "mvn clean package -B"
   artifacts:
     paths:
-      - rest-service/target/*.jar
+      - target/*.jar
 
 
 
