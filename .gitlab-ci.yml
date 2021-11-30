@@ -5,7 +5,7 @@ stages:
 
 build:
   stage: build
-  script: ./rest-service/mvnw package
+  script: chmod +x ./rest-service/mvnw package
   artifacts:
     paths:
       - rest-service/target/rest-service-0.0.1-SNAPSHOT.jar
