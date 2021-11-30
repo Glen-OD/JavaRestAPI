@@ -13,7 +13,7 @@ public class GreetingController {
 
     //private static final String template = "The Average word length of the sentence is, %s!";
     //private final AtomicLong counter = new AtomicLong();
-
+    //commit test
     // /greeting?name=Glen will print "hello Glen"
     @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/")
