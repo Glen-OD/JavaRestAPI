@@ -6,7 +6,8 @@ stages:
 build_job:
   stage: build
 
-  script: 
+  script:
+    - cd ./rest-service  
     - echo "Maven compile started"
     - "mvn compile"
 
