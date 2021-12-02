@@ -17,7 +17,7 @@ public class GreetingController {
     //commit test
     // /greeting?name=Glen will print "hello Glen"
     @GetMapping("/")
-    public Greeting greeting(@RequestParam(required = false, value = "sentence", defaultValue = "0") String sentence, HttpServletResponse response){
+    public Greeting greeting(@RequestParam(required = false, value = "sentence", defaultValue = "") String sentence, HttpServletResponse response){
         //Greeting ouput = new Greeting(counter.incrementAndGet(), String.format(template,sentence));
         //counter.decrementAndGet();
        // double avg = ouput.getAverageLength(sentence);
