@@ -3,13 +3,12 @@ package com.example.restservice;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 //import java.util.concurrent.atomic.AtomicLong;
-@CrossOrigin(origins = "http://localhost:8080")
 @RestController
 public class GreetingController {
 
@@ -17,7 +16,6 @@ public class GreetingController {
     //private final AtomicLong counter = new AtomicLong();
     //commit test
     // /greeting?name=Glen will print "hello Glen"
-    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/")
     public Greeting greeting(@RequestParam(required = false, value = "sentence", defaultValue = "0") String sentence, HttpServletResponse response){
         //Greeting ouput = new Greeting(counter.incrementAndGet(), String.format(template,sentence));
