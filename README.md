@@ -1,2 +1,3 @@
-# GlenJavaRestApi
+# Cloud computing project
+GlenJavaRestApi
 
