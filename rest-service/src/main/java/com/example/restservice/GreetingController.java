@@ -32,7 +32,7 @@ public class GreetingController {
         Greeting dummy = new Greeting(sentence, 5);
         double avg = dummy.getAverageLength(sentence);
         Greeting output = new Greeting(sentence, avg);
-        
+        "glen"
         return output;
 
 
